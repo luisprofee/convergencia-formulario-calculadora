@@ -1,0 +1,60 @@
+
+
+<ion-content class="body">
+  <br><br>
+  <ion-grid class="ion-no-padding">
+    <!-- logo -->
+    <ion-row class="header ion-align-items-start ion-align-items-stretch">
+      <ion-col size="10" offset="1" size-md="6" offset-md="3">
+        <img class="logo"  src="../assets/icon/logoAMS.png" />
+      </ion-col> 
+
+      <!-- Section form>-->
+      <ion-col size="10" offset="1" size-md="6" offset-md="3">
+        <form padding>
+          <ion-row class="ion-align-items-start">
+            <ion-col size="12">
+              <h1 style="color: #3D3B3B;"><strong class="text-logo">Bienvenido,</strong> Descuento de Convergencia para móvil</h1>
+            </ion-col>
+          </ion-row>
+          <!-- Input-field -->
+          <ion-row>
+            <ion-col size="12">
+              <div class="input-field">
+                <!-- Input-field-text -->
+                <ion-item >
+                  <ion-input type="email" placeholder="cedula" [(ngModel)]="credential.Cedula" [ngModelOptions]="{standalone: true}"></ion-input>
+                  <!-- <ion-label class="ion-no-margin" *ngIf="!isUsernameValid">Correo no permitido</ion-label> -->
+                </ion-item>
+                <!-- Input-field-password -->
+                <ion-item >
+                  <ion-input [type]="hideInputPassword ? 'password' : 'text' " placeholder="Contraseña" [(ngModel)]="credential.Pass" [ngModelOptions]="{standalone: true}"></ion-input>
+
+                  <ion-icon class="field-icon" *ngIf="hideInputPassword" name="eye-off" tappable (click)="hideInputPassword = !hideInputPassword"></ion-icon>
+                  <ion-icon class="field-icon" *ngIf="!hideInputPassword" name="eye" tappable (click)="hideInputPassword = !hideInputPassword"></ion-icon>
+
+                  <!-- <ion-label class="ion-no-margin" *ngIf="!isPasswordValid">Contraseña incorrecta</ion-label> -->
+                </ion-item>
+              </div>
+              <!-- Login button -->
+              <ion-col size="12" class="ion-no-padding">
+                <button class="btnFull ion-no-margin"  (click)="login()" >Login</button>
+              </ion-col>
+              
+              
+              <!-- Description -->
+              <div class="description ion-text-center">
+                <ion-row>
+                 
+                  <!-- Signup now button -->
+                  
+                </ion-row>
+              </div>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

@@ -1,0 +1,192 @@
+:host{
+    ion-content {
+  
+      --ion-background-color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      padding-bottom: 0 !important;
+  
+      ion-grid {
+  
+        min-height: 100%;
+  
+        h1 {
+          color: #CCCCCC;
+          font-size: 24px;
+          font-weight: 300px;
+          line-height: 29px;
+          margin-right: 20%;
+          margin-left: 20px;
+          margin-bottom: 40px;
+          width: 100%;
+        }
+        .text-logo {
+          display: block;
+          color: #1F1F1F !important;
+        }
+        form {
+          margin-top: 20%;
+          padding: 16px;
+  
+          .input-field {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #CCCCCC;
+  
+            .item:nth-last-child(1){
+              .item-inner {
+                border-bottom: none !important;
+              }
+            }
+            .item-block {
+              overflow: visible !important;
+            }
+          }
+          ion-item {
+            background-color: transparent !important;
+  
+            ion-label {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              color: #FF0000 !important;
+              font-size: 10px;
+              font-weight: 600px;
+              line-height: 17px;
+              margin-right: 10px;
+            }
+            .item-inner {
+              display: block !important;
+              overflow: visible !important;
+              border-bottom: 1px solid #CCCCCC !important;
+              box-shadow: none !important;
+            }
+            .text-input {
+              color: #242424;
+              font-size: 14px;
+              font-weight: 400px;
+              width: 100% !important;
+              margin: 19px 20px;
+            }
+            ::-webkit-input-placeholder {
+              color: #CCCCCC !important;
+              font-size: 14px !important;
+              font-weight: 400px !important;
+            }
+            ::-moz-placeholder {
+              color: #CCCCCC !important;
+              font-size: 14px !important;
+              font-weight: 400px !important;
+            }
+            :-ms-input-placeholder {
+              color: #CCCCCC !important;
+              font-size: 14px !important;
+              font-weight: 400px !important;
+            }
+            :-moz-placeholder {
+              color: #CCCCCC !important;
+              font-size: 14px !important;
+              font-weight: 400px !important;
+            }
+          }
+          .description {
+            margin: 20px 0;
+  
+            a {
+              color: #687DFC;
+              font-size: 12px;
+              font-weight: 400px;
+              text-decoration: none;
+            }
+            p {
+              color: #242424;
+              font-size: 12px;
+              font-weight: 400px;
+              line-height: 13px;
+            }
+          }
+          .btnFull {
+            min-height: 57px;
+            border-radius: 8px !important;
+            margin-top: 15px;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background-color: #687DFC !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16) !important;
+            width: 100%;
+            text-transform: uppercase;
+          }
+  
+        }
+      }
+    }
+  
+    .header{
+      margin-top: 12%;
+      flex: 1;
+    }
+    .body{
+      --ion-background-color: #ECECEC;
+    }
+    .logo {
+      height: 105px;
+      margin-top: 64px;
+      margin-left: 16px;
+    }
+    .cursorPointer {
+      cursor: pointer;
+    }
+  
+    .field-icon {
+      float: right;
+      margin-left: -25px;
+      position: relative;
+      z-index: 2;
+    }
+    ion-header{
+      --ion-background-color: var(--ion-color-white);
+    }
+    @media (min-width: 576px) and (orientation: portrait) {
+      ion-grid {
+        position: relative;
+      }
+      .logo {
+        position: absolute;
+        bottom: -50px;
+        left: 20px !important;
+      }
+      h1 {
+        margin-top: 50px !important;
+      }
+      form {
+        margin-top: 0 !important;
+      }
+    }
+    @media (min-width: 576px) and (orientation:landscape) {
+      ion-grid {
+        position: relative;
+      }
+      .logo {
+        position: absolute;
+        bottom: -50px;
+        left: 20px !important;
+      }
+      h1 {
+        margin-top: 50px !important;
+      }
+      form {
+        margin-top: 0 !important;
+      }
+    }
+    @media (max-width: 576px)  {
+      .header{
+        margin-top: 0% !important;
+      }
+    }
+  
+  
+  
+  }
+  

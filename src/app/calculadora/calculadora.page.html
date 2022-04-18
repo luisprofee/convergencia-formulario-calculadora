@@ -1,0 +1,227 @@
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="hogar">
+          <div class="contenedor">
+            <div  class="titulo">Seleccione Cliente Hogar</div>
+            <div class="selectores">
+                <div class="separadores">
+                    <input type="radio" name="selectorHogar" id="Nuevo" (click)="hogarEstado(2)">
+                    <label for="selectorHogar">Nuevo</label>
+                </div>
+                <div class="separadores">
+                    <input type="radio" name="selectorHogar" id="" (click)="hogarEstado(3)">
+                    <label for="selectorHogar">Actual</label>
+                </div>    
+            </div>
+            <div *ngIf="stateH == 2">
+
+              <div class="comentario">
+                <span class="comentario__img">
+                    <img src="../../assets/icon/hogar.png" alt="" width="50" height="50">
+                </span>
+                <span class="comentario__texto">
+                    Selecciones segun las especificaciones del cliente
+                </span>
+            </div>
+            <div class="contenidoHogar">
+                <span class="contenido__img">
+                    <img src="../../assets/icon/person.png" alt="persona" width="50" height="50">
+                </span>
+                <span class="contenido__texto">
+                    <p>Estrato</p> 
+                </span>
+                <span class="contenido__selector">
+                    <div class="separadores">
+                        <input type="radio" name="selectorEstrato" (click)="estrato(1)"  id="">
+                        <label for="selectorHogar">E 1 - 3</label>
+                    </div>
+                    <div class="separadores">
+                        <input type="radio" name="selectorEstrato" (click)="estrato(5)" id="">
+                        <label for="selectorHogar">E 4 - 6</label>
+                    </div> 
+                </span>
+                <span class="contenido__img">
+                    <img src="../../assets/icon/internet.png" alt="persona" width="50" height="50">
+                </span>
+                <span class="contenido__texto">
+                    <p>Internet</p>
+                </span>
+                <span class="contenido__selector">
+                    <ion-select [(ngModel)]="calculadora.internet"  name="transaccion" slot="end" interface="popover" required ok-text="OK" cancel-text="CANCEL" placeholder="Elija Opción" (ionChange)="validar($event)">
+                          
+                      <ion-select-option *ngFor="let internet of internets" [value]="internet.id">{{internet.internet}}</ion-select-option>
+                    </ion-select>
+                </span>
+                <span class="contenido__img">
+                    <img src="../../assets/icon/telefonia.png" alt="persona" width="50" height="50">
+                </span>
+                <span class="contenido__texto">
+                    <p>Telefonia</p>
+                </span>
+                <span class="contenido__selector">
+                    <ion-select [(ngModel)]="calculadora.telefonia" name="transaccion" slot="end" interface="popover" required ok-text="OK" cancel-text="CANCEL" placeholder="Elija Opción" (ionChange)="validar($event)" >
+                          
+                            <ion-select-option  value="1">SI</ion-select-option>
+                            <ion-select-option  value="2">NO</ion-select-option>
+                            
+          
+                          </ion-select>
+                </span>
+                <span class="contenido__img">
+                    <img src="../../assets/icon/television.png" alt="persona" width="50" height="50">
+                </span>
+                <span class="contenido__texto">
+                    <p>Television</p>
+                </span>
+                <span class="contenido__selector">
+                    <ion-select [(ngModel)]="calculadora.television" name="transaccion" slot="end" interface="popover" required ok-text="OK" cancel-text="CANCEL" placeholder="Elija Opción" (ionChange)="validar($event)" >
+                          
+                            <ion-select-option *ngFor="let television of televisions"  [value]="television.id">{{television.tv}}</ion-select-option>
+                            
+                            
+          
+                          </ion-select>
+                </span>
+            </div>
+            <div class="costo">
+                <span class="costo__texto">
+                    TOTAL
+                    <br>
+                    HOGAR
+                </span>
+                <span class="costo__img">
+                    <img src="../../assets/icon/linea.png" alt="" width="380px">
+                </span>
+                <span class="costo__valor ">
+                    {{costo | currency: ''}} <span class="tachado"> {{costoA | currency: ''}}</span>
+                </span>
+            </div>
+        </div>
+
+        <div *ngIf="stateH == 3" class="comentario">
+          <span class="comentario__img">
+              <img src="../../assets/icon/hogar.png" alt="" width="50" height="50">
+          </span>
+          <span class="comentario__texto">
+            Identifica la oferta actual de el cliente y realiza una reconfiguración según las políticas del segmento hogar.
+          </span>
+      </div>
+        </div>
+
+            </div>    
+            
+      </ion-col>
+      <ion-col>
+        <div class="movilP">
+         
+            <div class="contenedor">
+              <div  class="titulo">Seleccione Cliente Pospago</div>
+              <div class="selectores">
+                  <div class="separadores">
+                      <input type="radio" name="selectorHogar" id="Nuevo" (click)="movilEstado(2)">
+                      <label for="selectorHogar">Nuevo</label>
+                  </div>
+                  <div class="separadores">
+                      <input type="radio" name="selectorHogar" id="" (click)="movilEstado(3)">
+                      <label for="selectorHogar">Actual</label>
+                  </div>    
+              </div> 
+              <div *ngIf="stateM == 2">   
+              <div class="comentario">
+                  <span class="comentario__img">
+                      <img src="../../assets/icon/movil.png" alt="" width="50" height="50">
+                  </span>
+                  <span class="comentario__texto">
+                      Selecciones segun las especificaciones del cliente
+                  </span>
+              </div>
+              <div class="contenidoMovil">
+                  <span class="contenido__texto">
+                      <p>Datos</p>
+                  </span>
+                  <span class="contenido__selector">
+                    <ion-select [(ngModel)]="calculadora.pospago"  name="transaccion" slot="end" interface="popover" required ok-text="OK" cancel-text="CANCEL" placeholder="Elija Opción" (ionChange)="buscarDatos($event)">
+                            
+                      <ion-select-option *ngFor="let pospago of pospagos" [value]="pospago.id">{{pospago.gb}}</ion-select-option>
+                    </ion-select>
+                  </span>
+                  <span class="contenido__texto">
+                    <p>Plan Familia</p>
+                </span>
+                <span class="contenido__selector">
+                  <ion-select [(ngModel)]="calculadora.familia"  name="transaccion" slot="end" interface="popover" required ok-text="OK" cancel-text="CANCEL" placeholder="Elija Opción" (ionChange)="planFamilia()">
+                          
+                    <ion-select-option  value="1">SI</ion-select-option>
+                    <ion-select-option  value="2">NO</ion-select-option>
+                  </ion-select>
+                </span>
+                  <span class="contenido__texto">
+                      <p>Datos Compartir</p>
+                  </span>
+                  <span class="contenido__selector">
+                      <input class="opciones" type="select" value="{{datosCompartir}}" disabled>
+                  </span>
+              </div>
+              <div class="costo">
+                  <span class="costo__texto">
+                      TOTAL
+                      <br>
+                      MOVIL
+                  </span>
+                  <span class="costo__img">
+                      <img src="../../assets/icon/linea.png" alt="" width="380">
+                  </span>
+                  <span class="costo__valor">
+                      {{costoM | currency: ''}} <span class="tachado">  {{costoMa | currency: ''}}</span>
+                  </span>
+              </div>
+              <br>
+
+              <div class="contenidoMovil">
+                <span class="contenido__texto">
+                  <p>TOTAL FULL TIGO</p>
+              </span>
+              <span class="contenido__selector">
+                  
+                  <span class="costo__valor">
+                    {{total | currency: ''}} <span class="tachado"> {{totalB | currency: ''}}</span>
+                </span>
+              </span>
+              <span class="contenido__texto">
+                <p>TU AHORRO EL PRIMER AÑO ES</p>
+            </span>
+            <span class="contenido__selector">
+              <span class="costo__valor">
+                 {{ahorro | currency: ''}} 
+            </span>
+            </span>
+              </div>
+              
+          </div>
+          <div class="comentario" *ngIf="stateM == 3">
+            <span class="comentario__img">
+                <img src="../../assets/icon/movil.png" alt="" width="50" height="50">
+            </span>
+            <span class="comentario__texto">
+              Sigue el proceso definido
+            </span>
+        </div>
+          </div>
+          
+        
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
+
+
+  
+
+
+</ion-content>
